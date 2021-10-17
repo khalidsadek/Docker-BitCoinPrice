@@ -17,7 +17,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t khalid-bitCoinApp:latest .'
+				sh 'docker build -t khalid-bitcoinapp:latest .'
 			}
 		}
 
@@ -31,7 +31,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push khalid-bitCoinApp:latest'
+				sh 'docker push khalid-bitcoinapp:latest'
 			}
 		}
 	}
