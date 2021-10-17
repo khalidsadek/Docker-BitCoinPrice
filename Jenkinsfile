@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-          git 'https://github.com/khalidsadek/bitCoin-docker.git'
+          git 'https://github.com/khalidsadek/Docker-BitCoinPrice.git'
       }
     }
 
