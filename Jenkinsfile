@@ -24,6 +24,7 @@ pipeline{
 		stage('Login') {
 
 			steps {
+				sh 'sudo usermod -aG docker $USER'
 				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 			}
 		}
