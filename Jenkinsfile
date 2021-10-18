@@ -57,20 +57,14 @@ environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred5')
 	}
 stages{
-	stage('Clone The Project'){
+	stage('Git Clone'){
 		steps{
             git 'https://github.com/khalidsadek/Docker-BitCoinPrice.git'   
 			 }
 	    }
 	    
-	//    stage('SET UP THE ENVIROMENT TO USE DOCKER'){// the ref .... https://stackoverflow.com/questions/60583847/aws-ecr-saying-cannot-perform-an-interactive-login-from-a-non-tty-device-after
-	// 	steps{// + make this change sudo chmod 666 /var/run/docker.sock from  https://github.com/palantir/gradle-docker/issues/188
-    //         sh 'sudo usermod -aG docker $USER'
 
-	//     } 
-	//    }
-
-	stage('Build The image') {
+	stage('Build Image') {
       steps {
         sh 'docker build -t khalidsadek/bitcoin .'
       }
@@ -83,7 +77,7 @@ stages{
       }
     }
 
- stage('PUSH THE IMAGE') {
+ stage('Push Image') {
       steps {
         sh 'docker push khalidsadek/bitcoin'
       }
