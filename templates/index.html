@@ -34,9 +34,10 @@
 
 
     <div class="container-fluid">
-        <!-- Example row of columns -->
+        
         <div class="row">
             <div class="container-fluid" id="data-container">
+                
 
             </div>
         </div>
@@ -46,8 +47,8 @@
 
     <script>
         var chart;
-        //  requestavg()
-
+        var curAverage
+  
         function requestData()
         {
             // Ajax call to get the Data from Flask
@@ -63,25 +64,11 @@
                 chart.series[0].addPoint(result, true, shift);
 
                 // call it again after one minute
-                setTimeout(requestData, 60000);
+                setTimeout(requestData, 1000);
             });
         }
 
-        function requestavg()
-        {
-             var requests = $.get('/average');
-             console.log(requests);
-            //  console.log($.get('/average'));
-            // chart.title.text = "afdgsdgs"
-           //  var tm = requests.done(function (result)
-           // {
-               //  console.log(result);
-                // chart.title.text = "afdgsdgs"
-                // return result
-                // call it again after one second
-                // setTimeout(requestData, 1000);
-           // });
-        }
+       
 
         $(document).ready(function() {
         
@@ -100,11 +87,11 @@
                 title: {
                     text: "BitCoin Price every minute"
                 },
-                // xAxis: {
-                //     type: 'datetime',
-                //     tickPixelInterval: 150,
-                //     maxZoom: 20 * 1000
-                // },
+                xAxis: {
+                    type: 'datetime',
+                    tickPixelInterval: 150,
+                    //  maxZoom:  100000
+                },
                 yAxis: {
                     minPadding: 0.2,
                     maxPadding: 0.2,
@@ -120,6 +107,7 @@
             });
 
         });
+
     </script>
 </body>
 
