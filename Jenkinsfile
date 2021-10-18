@@ -72,7 +72,7 @@ stages{
 
 	stage('Build The image') {
       steps {
-        sh 'docker build -t khalid-bitcoinapp:latest .'
+        sh 'docker build -t khalid-bitcoinapp .'
       }
     }
     
@@ -85,7 +85,7 @@ stages{
 
  stage('PUSH THE IMAGE') {
       steps {
-        sh 'docker push khalid-bitcoinapp:latest'
+        sh 'docker push khalid-bitcoinapp'
       }
     }
  
