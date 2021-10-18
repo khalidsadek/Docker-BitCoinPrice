@@ -63,7 +63,7 @@
                 // add the point
                 chart.series[0].addPoint(result, true, shift);
 
-                // call it again after one minute
+                // call it again after one second // 60000 for one minute
                 setTimeout(requestData, 1000);
             });
         }
