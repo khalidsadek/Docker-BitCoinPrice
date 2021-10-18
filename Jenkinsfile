@@ -54,7 +54,7 @@ pipeline
 
 agent {label 'slave'};
 environment {
-		DOCKERHUB_CREDENTIALS=credentials('dockerHub-khCred')
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred5')
 	}
 stages{
 	stage('Clone The Project'){
